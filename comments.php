@@ -1,5 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<div class="mck-comment" id="<?php $this->respondId(); ?>">
+
+  <div class="mck-comment" id="<?php $this->respondId(); ?>">
 	<?php if($this->allow('comment')): ?>
 	<div class="mck-div-title">
 		<h1 class="mck-div-maintitle">围观区<span class="mck-div-title_ani">_<span></h1>
@@ -33,43 +34,67 @@
 		</div>
 	</form>
 
-	<ul class="mck-comment-list">
-		<?php $this->comments()->to($comments); ?>
-		<?php while($comments->next()): ?>
+		<?php 
+			  
+		function threadedComments($comments) {
+			if(!$comments) return;
+			$commentClass = '';
+			
+			if ($comments->authorId) {
+			    
+			    if ($comments->authorId == $comments->ownerId) {
+			        $commentClass .= ' comment-by-author'; 
+			    } else {
+			        $commentClass .= ' comment-by-user'; 
+			    }
+			} 
+			
+			$commentLevelClass = $comments->_levels > 0 ? ' comment-child' : ' comment-parent';  
+	    ?>
+
 		<li id="<?php $comments->theId(); ?>" class="comment-body<?php 
 		if ($comments->levels > 0) {
 		    echo ' comment-child';
 		} else {
 		    echo ' comment-parent';
 		}
+		$comments->alt(' comment-odd',' comment-even');
+		echo ' '.$commentClass;
 		?>">
-			<div class="mck-comment-wrapper">
-				<div class="mck-comment-header">
-					<a href="#" class="mck-comment-avatar">
-						<?php echo $comments->gravatar(36);?>
-					</a>
+         
+        <div class="mck-comment-wrapper">
+		    <div class="mck-comment-header">
+				<a href="#" class="mck-comment-avatar">
+					<?php echo $comments->gravatar(36);?>
+				</a>
 					
-					<div class="mck-comment-info">
-						<a href="#" class="mck-comment-author"><?php $comments->author(); ?></a>
-						<p class="mck-comment-time"><?php $comments->date('Y-m-d H:i'); ?></p>	
-					</div>
-			
-					<div class="mck-comment-reply">
-						<?php $comments->reply('回复'); ?>
-					</div>
+				<div class="mck-comment-info">
+					<a href="#" class="mck-comment-author"><?php $comments->author(); ?></a>
+					<p class="mck-comment-time"><?php $comments->date('Y-m-d H:i'); ?></p>	
 				</div>
-				
-				<div class="mck-comment-content">
-					<p><?php $comments->content(); ?></p>
+			
+				<div class="mck-comment-reply">
+					<?php $comments->reply('回复'); ?>
 				</div>
 			</div>
+				
+			<div class="mck-comment-content">
+				<p><?php $comments->content(); ?></p>
+			</div>
+		</div>
 			
-			<?php if ($comments->children) { ?> 
-			<ul class="comment-children">
-			    <?php $comments->threadedComments($options); ?> 
-			</ul>
-			<?php } ?>
+		<?php if ($comments->children) { ?> 
+	    <ul class="comment-children">
+			<?php $comments->threadedComments(); ?> 
+		</ul>
+		<?php } ?>
 		</li>
+<?php } ?>
+
+	<ul class="mck-comment-list">
+		<?php $this->comments()->to($comments); ?>
+		<?php while($comments->next()): ?>
+           <?php threadedComments($comments); ?>
 		<?php endwhile; ?>
 	</ul>	
 	<?php else: ?>

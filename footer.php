@@ -3,9 +3,7 @@
 			<p class="mck-copyright-info">mochiko &copy; since 2018</p>
 		</footer>		
 	</div>
-
+<script src="https://cdn.bootcss.com/jquery/1.8.0/jquery-1.8.0.js"></script>
+<script src="<?php $this->options->themeUrl('js/all.min.js'); ?>""></script>
 </body>
-<script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
-<script src="<?php $this->options->themeUrl('js/jquery.mCustomScrollbar.concat.min.js'); ?>"></script>
-<script src="<?php $this->options->themeUrl('js/all.min.js'); ?>"></script>
 </html>

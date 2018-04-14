@@ -6,7 +6,7 @@
 			<p>LOADING...</p>
 		</div>
 	</div>
-	<div class="mCustomScrollbar mck-wrapper" data-mcs-theme="minimal-dark" id="mck-wrapper">
+	<div class="mck-wrapper" data-mcs-theme="minimal-dark" id="mck-wrapper">
 		<header class="mck-header">
 			<div class="mck-header-title-wrapper">
 				<p class="mck-header-subtitle"><?php $this->options->description() ?></p>

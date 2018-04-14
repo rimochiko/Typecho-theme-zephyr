@@ -5,7 +5,7 @@
 			<p>LOADING...</p>
 		</div>
 	</div>
-	<div class="mCustomScrollbar mck-wrapper" data-mcs-theme="minimal-dark" id="mck-wrapper">
+	<div class="mck-wrapper" data-mcs-theme="minimal-dark" id="mck-wrapper">
 		<header class="mck-header">
 			<div class="mck-header-title-wrapper">
 				<p class="mck-header-subtitle"><?php $this->options->description() ?></p>
@@ -85,7 +85,6 @@
 			 		</div>
 			 		<p class="mck-introduction-des">未来程序猿 / J-POP乐迷 / 处女座</br>做一点设计 / 拍拍照 / 说点日语</p>
 			 	</div>
-
 			 	<div class="mck-friends mck-aside-wrapper">
 					<div class="mck-div-title">
 						<h1 class="mck-div-maintitle">友情传送<span class="mck-div-title_ani">_<span></h1>
@@ -95,13 +94,47 @@
 					<ul class="mck-linklist">
 						<li>
 							<a href="http://blog.hijerry.cn/" target="_blank" class="mck-linklist-url">JerryHe</a>
-							
+						</li>
+						<li>	
 							<a href="http://blog.csdn.net/qq_32623363" target="_blank" class="mck-linklist-url">Yinyoupoet</a>
-
+						</li>
+						<li>
 							<a href="https://anrans.github.io" target="_blank" class="mck-linklist-url">Anran</a>
-
+						</li>
+						<li>
 							<a href="https://xuyonglin222.github.io" target="_blank" class="mck-linklist-url">徐永林</a>
 						</li>
+					</ul>
+			 	</div>
+
+			 	<div class="mck-friends mck-aside-wrapper">
+					<div class="mck-div-title">
+						<h1 class="mck-div-maintitle">糕在他途<span class="mck-div-title_ani">_<span></h1>
+						<p class="mck-div-subtitle">Community</p>
+					</div>
+
+					<ul class="mck-linklist">
+						<li>
+							<a href="https://segmentfault.com/u/mochichan" target="_blank" class="mck-linklist-url">SegementFault</a>
+						</li>
+						<li>	
+							<a href="http://music.163.com/#/user/home?id=82219531" target="_blank" class="mck-linklist-url">网易云音乐</a>
+						</li>
+						<li>
+							<a href="https://weibo.com/rimochiko" target="_blank" class="mck-linklist-url">新浪微博</a>
+</li>
+<li>
+							<a href="https://github.com/rimochiko" target="_blank" class="mck-linklist-url">GitHub</a>
+						</li>
+						</li>
+<li>
+							<a href="https://git.oschina.net/" target="_blank" class="mck-linklist-url">码云</a>
+						</li>
+</li>
+<li>
+							<a href="http://huaban.com/rimochiko/" target="_blank" class="mck-linklist-url">花瓣网</a>
+						</li>
+
 					</ul>
 			 	</div>
 
@@ -111,13 +144,13 @@
 						<p class="mck-div-subtitle">My Sites</p>
 					</div>
 					<a href="https://rimochiko.github.io/" target="_blank" class="mck-link-site mck-github-blog">
-						<p class="mck-link-title">NOTE</p>
-						<p class="mck-link-des">技术相关都在此</p>
+						<p class="mck-link-title">技术博客</p>
+						<p class="mck-link-des">学习相关都在此</p>
 					</a>
 
-					<a href="#" target="_blank" class="mck-link-site mck-nav-blog">
-						<p class="mck-link-title">GIFT</p>
-						<p class="mck-link-des">分享收藏的网站</p>
+					<a href="http://www.mochiko.cn/zero" target="_blank" class="mck-link-site mck-nav-blog">
+						<p class="mck-link-title">ZERO</p>
+						<p class="mck-link-des">自制Wordpress主题</p>
 					</a>
 				</div>
 			 </div>
